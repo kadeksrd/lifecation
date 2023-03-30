@@ -48,9 +48,13 @@
     color: $primary;
     font-size: 32px;
     font-weight: 600;
+    &:hover{
+        color: $primary;
+        text-decoration: none;
+    }
 } 
 
-Header{
+header{
     width: 100%;
     position:relative;
 
@@ -59,8 +63,14 @@ Header{
 
         .navbar-nav{
             li.nav-item{
-                &{
+               &.active{
+                a.nav-link{
+                    color: $primary;
+                }
+               }
+                a{
                     &.nav-link{
+                        letter-spacing: 0.6px;
                         color: $gray-900;
                         padding-left: 1 rem;
                         padding-right: 1 rem;
