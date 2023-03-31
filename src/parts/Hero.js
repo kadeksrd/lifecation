@@ -1,11 +1,11 @@
 import Button from "element/Button";
 import React from "react";
-
 import ImageHero from "assets/images/Image-hero.png";
 import ImageFrame from "assets/images/frame_hero.png";
 import IconTraveller from "assets/images/icon/icon-traveler.svg";
 import IconCities from "assets/images/icon/icon-cities.svg";
 import IconTreasure from "assets/images/icon/icon-treasure.svg";
+import numberFormat from "utils/FormatNumber.js";
 
 export default function Hero(props) {
   function showMostPicked() {
@@ -16,7 +16,7 @@ export default function Hero(props) {
   }
 
   return (
-    <section className="container pt-5">
+    <section className="container">
       <div className="row">
         <div className="col-auto pr-5" style={{ width: 530 }}>
           <h1 className="font-weight-bold line-height-1 mb-3">
@@ -47,7 +47,7 @@ export default function Hero(props) {
                 height="32"
               />
               <h6 className="mt-3 icon-font">
-                {props.data.travelers}{" "}
+                {numberFormat(props.data.travelers)}{" "}
                 <span className="text-gray-500 font-weight-light">
                   Travellers
                 </span>
@@ -61,7 +61,7 @@ export default function Hero(props) {
                 height="32"
               />
               <h6 className="mt-3 icon-font">
-                {props.data.cities}{" "}
+                {numberFormat(props.data.cities)}{" "}
                 <span className="text-gray-500 font-weight-light">Cities</span>
               </h6>
             </div>
@@ -73,7 +73,7 @@ export default function Hero(props) {
                 height="32"
               />
               <h6 className="mt-3 icon-font">
-                {props.data.treasures}{" "}
+                {numberFormat(props.data.treasures)}{" "}
                 <span className="text-gray-500 font-weight-light">
                   Treasures
                 </span>
