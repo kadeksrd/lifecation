@@ -59,6 +59,7 @@ header{
     position:relative;
 
     .navbar{
+        margin-left: -15px;
         height: 80px;
 
         .navbar-nav{
@@ -72,8 +73,8 @@ header{
                     &.nav-link{
                         letter-spacing: 0.6px;
                         color: $gray-900;
-                        padding-left: 1 rem;
-                        padding-right: 1 rem;
+                        padding-left: 1rem;
+                        padding-right: 1rem;
                         &:hover{
                             text-decoration: underline;
                         }
@@ -83,4 +84,12 @@ header{
         }
     }
 
+}
+
+.icon-font{
+    font-size: 14px;
+}
+
+.button-hero{
+    font-weight: 600;
 }

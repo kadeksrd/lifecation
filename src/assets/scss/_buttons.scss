@@ -15,6 +15,7 @@
   vertical-align: middle;
   user-select: none;
   background-color: transparent;
+  min-height: 40px;
   border: $btn-border-width solid transparent;
   @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
   @include transition($btn-transition);
@@ -29,7 +30,9 @@
     outline: 0;
     box-shadow: $btn-focus-box-shadow;
   }
-
+  &.btn-shadow{
+    box-shadow: 0px 8px 15px rgba($primary, 0.5);
+  }
   // Disabled comes first so active can properly restyle
   &.disabled,
   &:disabled {
