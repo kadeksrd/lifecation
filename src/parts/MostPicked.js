@@ -4,16 +4,20 @@ import React from "react";
 function MostPicked(props) {
   return (
     <section className="container">
-      <h4 className="text-center" style={{ fontWeight: 600 }}>
+      <h3 className="text-center" style={{ fontWeight: 600 }}>
         Most Picked
-      </h4>
-      <div className="container-grid">
+      </h3>
+      <div className="container-grid mt-4">
         {props.data.map((item, index) => {
           return (
-            <div className={`item column-4 ${index === 0 ? "row-2" : "row-1"}`}>
+            <div
+              className={`item column-4 ${
+                index === 0 ? "row-2 main-img" : "row-1"
+              }`}
+            >
               <div className="card card-featured">
                 <div className="tag">
-                  ${item.price}
+                  ${item.price}{" "}
                   <span className="font-weight-light">per {item.unit}</span>
                 </div>
                 <figure className="img-wrapper">
