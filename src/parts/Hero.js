@@ -34,7 +34,7 @@ export default function Hero(props) {
             className="btn btn-border-radius py-2 px-5 btn-shadow button-hero"
             hasShadow
             isPrimary
-            onclick={showMostPicked}
+            onClick={showMostPicked}
           >
             Show Me Now
           </Button>

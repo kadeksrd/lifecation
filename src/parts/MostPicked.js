@@ -3,14 +3,15 @@ import React from "react";
 
 function MostPicked(props) {
   return (
-    <section className="container">
+    <section className="container" ref={props.refMostPicked}>
       <h3 className="text-center" style={{ fontWeight: 600 }}>
         Most Picked
       </h3>
-      <div className="container-grid mt-4">
+      <div className="container-grid mt-4 mb-5">
         {props.data.map((item, index) => {
           return (
             <div
+              key={`mostPicked-${index}`}
               className={`item column-4 ${
                 index === 0 ? "row-2 main-img" : "row-1"
               }`}
