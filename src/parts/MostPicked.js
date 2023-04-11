@@ -3,8 +3,11 @@ import React from "react";
 
 function MostPicked(props) {
   return (
-    <section className="container" ref={props.refMostPicked}>
-      <h3 className="text-center" style={{ fontWeight: 600 }}>
+    <section
+      className="container"
+      ref={props.refMostPicked}
+      style={{ paddingBottom: 5 }}>
+      <h3 className="text-center mb-5" style={{ fontWeight: 600 }}>
         Most Picked
       </h3>
       <div className="container-grid mt-4 mb-5">
@@ -14,8 +17,7 @@ function MostPicked(props) {
               key={`mostPicked-${index}`}
               className={`item column-4 ${
                 index === 0 ? "row-2 main-img" : "row-1"
-              }`}
-            >
+              }`}>
               <div className="card card-featured">
                 <div className="tag">
                   ${item.price}{" "}
@@ -32,8 +34,7 @@ function MostPicked(props) {
                   <Button
                     type="link"
                     className="streched-link d-block text-white"
-                    href={`/propeties/${item._id}`}
-                  >
+                    href={`/propeties/${item._id}`}>
                     {item.name}
                   </Button>
                   <span>
