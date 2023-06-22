@@ -6,7 +6,7 @@ import IconTraveller from "assets/images/icon/icon-traveler.svg";
 import IconCities from "assets/images/icon/icon-cities.svg";
 import IconTreasure from "assets/images/icon/icon-treasure.svg";
 import numberFormat from "utils/FormatNumber.js";
-import { Fade } from "react-reveal";
+import { Fade } from "react-awesome-reveal";
 
 export default function Hero(props) {
   function showMostPicked() {

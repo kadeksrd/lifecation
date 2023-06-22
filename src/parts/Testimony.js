@@ -2,7 +2,7 @@ import React from "react";
 import Star from "element/Star";
 import TestimonyAccent from "../assets/images/testimonial-frame.png";
 import Button from "element/Button";
-import { Fade } from "react-reveal";
+import { Fade } from "react-awesome-reveal";
 
 export default function Testimony({ data }) {
   return (

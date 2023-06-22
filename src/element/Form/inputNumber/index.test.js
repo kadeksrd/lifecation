@@ -6,6 +6,7 @@ class TestInput extends React.Component {
   state = {
     value: "",
   };
+
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
@@ -24,21 +25,23 @@ class TestInput extends React.Component {
 
 const setup = () => {
   const { container } = render(<TestInput />);
-  const input = container.querySelector(`input.form-control[name=value]`);
+  const input = container.querySelector(`input.form-control[name='value']`);
 
   return {
     input,
   };
 };
 
-test("should able to change value", () => {
+test("Should able to change value", () => {
   const { input } = setup();
+
   fireEvent.change(input, { target: { value: 23 } });
   expect(input.value).toBe("23");
 });
 
-test("should not be able to change when reach max value", () => {
+test("Should not be able to change when reach max value", () => {
   const { input } = setup();
+
   fireEvent.change(input, { target: { value: 33 } });
   expect(input.value).toBe("");
 });

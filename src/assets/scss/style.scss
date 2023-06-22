@@ -103,7 +103,18 @@ section{
 .card{
     height: 100%;
 }
+.detail-card{
+    width: 414px;
+height: 529px;
+    margin-top: 3.2rem;
+    margin-left: 1rem;
+    border: 1px solid $gray-200 !important;
+    padding: 51px 47px;
+    border-radius: 20px;
 
+    box-shadow: (9px 9px 4px rgba(0, 0, 0, 0.17));
+
+}
 .img-cover{
     object-fit: cover;
     height: 100%;
@@ -117,6 +128,9 @@ section{
 }
 
 .card{
+
+    border-radius: 20px;
+
     height: 100%;
 
     .tag{
@@ -274,3 +288,9 @@ footer{
 }
 
 
+main{
+    p{
+        color: $gray-400;
+        font-weight: 400;
+    }
+}
