@@ -2,8 +2,8 @@ import React from "react";
 import "assets/scss/style.scss";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import LandingPage from "page/LandingPage";
-import Example from "page/example";
 import DetailsPage from "page/DetailsPage";
+import Checkout from "page/Checkout";
 
 function App() {
   return (
@@ -11,7 +11,8 @@ function App() {
       <Router>
         <Route exact path="/" component={LandingPage}></Route>
         <Route exact path="/propeties/:id" component={DetailsPage}></Route>
-        <Route exact path="/example" component={Example}></Route>
+        <Route path="/checkout" component={Checkout}></Route>
+        {/* <Route exact path="/example" component={Example}></Route> */}
       </Router>
     </div>
   );

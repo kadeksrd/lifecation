@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import InputDate from "element/Form/inputDate/index";
-import InputNumber from "element/Form/inputNumber/index";
+
 import Breadcrumb from "element/Breadcrumb";
+import Number from "element/Form/InputNumber";
+import Date from "element/Form/InputDate";
 
 export default class Example extends Component {
   state = {
@@ -30,8 +31,8 @@ export default class Example extends Component {
           className="row align-items-center justify-content-center"
           style={{ height: "100vh" }}>
           <div className="col-auto">
-            <InputNumber min={0} max={30} />
-            <InputDate
+            <Number min={0} max={30} />
+            <Date
               max={30}
               onChange={this.handleChange}
               name="value"

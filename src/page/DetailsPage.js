@@ -8,10 +8,11 @@ import BookingForm from "parts/BookingForm";
 import Category from "parts/Category";
 import Footer from "parts/Footer";
 import { Fade } from "react-awesome-reveal";
+import Testimony from "parts/Testimony";
 
 export default class DetailsPage extends Component {
   componentDidMount() {
-    window.title = "Details";
+    document.title = "Lifecation | Details";
     window.scrollTo(0, 0);
   }
 
@@ -28,19 +29,23 @@ export default class DetailsPage extends Component {
         <FeaturedImage data={ItemDetails.imageUrls} />
         <section className="container">
           <div className="row">
-              <div className="col-7 pr-5">
-            <Fade bottom>
+            <div className="col-7 pr-5">
+              <Fade up>
                 <PageDetailDescription data={ItemDetails} />
-            </Fade>
-              </div>
-              <div className="col-5">
-            <Fade bottom>
-                <BookingForm itemDetails={ItemDetails} />
-            </Fade>
-              </div>
+              </Fade>
+            </div>
+            <div className="col-5">
+              <Fade bottom>
+                <BookingForm
+                  itemDetails={ItemDetails}
+                  startBooking={this.props.checkoutBooking}
+                />
+              </Fade>
+            </div>
           </div>
         </section>
         <Category data={ItemDetails.categories} />
+        <Testimony data={ItemDetails.testimonial} />
         <Footer />
       </>
     );

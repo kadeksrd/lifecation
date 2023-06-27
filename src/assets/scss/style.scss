@@ -105,7 +105,7 @@ section{
 }
 .detail-card{
     width: 414px;
-height: 529px;
+    height: 529px;
     margin-top: 3.2rem;
     margin-left: 1rem;
     border: 1px solid $gray-200 !important;
@@ -127,7 +127,21 @@ height: 529px;
     width: 100%;
 }
 
+
+
 .card{
+    &.bordered{
+    
+
+    /* Rectangle 6 */
+    width: 414px;
+    height: 529px;
+    
+    filter: drop-shadow(9px 9px 4px rgba(0, 0, 0, 0.17));
+    
+     border: solid  1px #C8C8C8
+    
+    }
 
     border-radius: 20px;
 
