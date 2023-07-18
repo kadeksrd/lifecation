@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import ItemDetails from "json/itemDetails.json";
 import Header from "parts/Header";
 import Button from "element/Button";
@@ -14,7 +15,8 @@ import Payment from "parts/Checkout/Payment";
 import Completed from "parts/Checkout/Completed";
 import { Fade } from "react-awesome-reveal";
 
-export default class Checkout extends Component {
+
+class Checkout extends Component {
   state = {
     data: {
       firstName: "",
@@ -42,10 +44,35 @@ export default class Checkout extends Component {
 
   render() {
     const { data } = this.state;
+    const { checkout, page } = this.props;
+    console.log(page, data);
 
-    const checkout = {
-      duration: 3,
-    };
+    if (!checkout) {
+      return (
+        <div className="container">
+          <div
+            className="row align-items-center justify-content-center text-center"
+            style={{ height: "100vh" }}>
+            <div className="col-3">
+              Pilih kamar dulu
+              <div>
+                <Button
+                  className="btn mt-5"
+                  type="button"
+                  onClick={() => this.props.history.goBack()}
+                  isLight>
+                  Back
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    // const checkout = {
+    //   duration: 3,
+    // };
 
     const steps = {
       bookingInformation: {
@@ -54,8 +81,8 @@ export default class Checkout extends Component {
         content: (
           <BookingInformation
             data={data}
+            ItemDetails={page[checkout._id]}
             checkout={checkout}
-            ItemDetails={ItemDetails}
             onChange={this.onChange}
           />
         ),
@@ -79,6 +106,7 @@ export default class Checkout extends Component {
       },
     };
 
+    console.log(steps);
     return (
       <>
         <Header isCentered />
@@ -172,3 +200,9 @@ export default class Checkout extends Component {
     );
   }
 }
+const mapStateToProps = (state) => ({
+  checkout: state.checkout,
+  page: state.page,
+});
+
+export default connect(mapStateToProps)(Checkout);

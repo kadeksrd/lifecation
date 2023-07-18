@@ -308,3 +308,15 @@ main{
         font-weight: 400;
     }
 }
+
+.bigImage{ 
+    img{
+        height: 570px !important;
+    }
+}
+
+.smallImage{
+    img{
+        height: 280px;
+    }
+}

@@ -70,12 +70,12 @@ export default function Hero(props) {
               <div className="col-auto">
                 <img
                   src={IconTreasure}
-                  alt={`${props.data.treasures} treasures`}
+                  alt={`${props.data.treasure} treasures`}
                   width="32"
                   height="32"
                 />
                 <h6 className="mt-3 icon-font">
-                  {numberFormat(props.data.treasures)}{" "}
+                  {numberFormat(props.data.treasure)}{" "}
                   <span className="text-gray-500 font-weight-light">
                     Treasures
                   </span>
