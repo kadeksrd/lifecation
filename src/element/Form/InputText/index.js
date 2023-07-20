@@ -54,7 +54,7 @@ export default function InputText(props) {
           type={type}
           className={["form-control", inputClassName].join(" ")}
           value={value}
-          placeholder={placeholder}
+          placeholder={placeholder ? placeholder : "Please Type Here!"}
           onChange={onChange}
         />
         {append && (

@@ -14,7 +14,7 @@ import BookingInformation from "parts/Checkout/BookingInformation";
 import Payment from "parts/Checkout/Payment";
 import Completed from "parts/Checkout/Completed";
 import { Fade } from "react-awesome-reveal";
-
+import { submitBooking } from "store/action/checkout";
 
 class Checkout extends Component {
   state = {
@@ -41,6 +41,29 @@ class Checkout extends Component {
   componentDidMount() {
     window.scroll(0, 0);
   }
+
+  _Submit = (nextStep) => {
+    const { data } = this.state;
+    const { checkout } = this.props;
+
+    const payload = new FormData();
+    payload.append("firstName", data.firstName);
+    payload.append("lastName", data.lastName);
+    payload.append("email", data.email);
+    payload.append("phoneNumber", data.phone);
+    payload.append("idItem", checkout._id);
+    payload.append("duration", checkout.duration);
+    payload.append("bookingStartDate", checkout.date.startDate);
+    payload.append("bookingEndDate", checkout.date.endDate);
+    payload.append("accountHolder", data.bankHolder);
+    payload.append("bankFrom", data.bankName);
+    payload.append("image", data.proofPayment[0]);
+    // payload.append("bankId", checkout.bankId);
+
+    this.props.submitBooking(payload).then(() => {
+      nextStep();
+    });
+  };
 
   render() {
     const { data } = this.state;
@@ -146,7 +169,7 @@ class Checkout extends Component {
                     type="link"
                     isBlock
                     isLight
-                    href={`/properties/${ItemDetails._id}`}>
+                    href={`/propeties/${checkout._id}`}>
                     Cancel
                   </Button>
                 </Controller>
@@ -164,7 +187,7 @@ class Checkout extends Component {
                           isBlock
                           isPrimary
                           hasShadow
-                          onClick={nextStep}>
+                          onClick={() => this._Submit(nextStep)}>
                           Continue to Book
                         </Button>
                       </Fade>
@@ -205,4 +228,4 @@ const mapStateToProps = (state) => ({
   page: state.page,
 });
 
-export default connect(mapStateToProps)(Checkout);
+export default connect(mapStateToProps, { submitBooking })(Checkout);
