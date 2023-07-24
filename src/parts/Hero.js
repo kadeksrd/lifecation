@@ -20,7 +20,7 @@ export default function Hero(props) {
     <Fade bottom>
       <section className="container">
         <div className="row">
-          <div className="col-auto pr-5" style={{ width: 530 }}>
+          <div className="col-12 col-lg-auto pr-5" style={{ width: 530 }}>
             <h1 className="font-weight-bold line-height-1 mb-3">
               Forget you work, <br />
               start your vacation
@@ -38,7 +38,7 @@ export default function Hero(props) {
               onClick={showMostPicked}>
               Show Me Now
             </Button>
-            <div className="row mt-5">
+            <div className="row mt-5 hero-treasure">
               <div className="col-auto" style={{ marginRight: 35 }}>
                 <img
                   src={IconTraveller}
@@ -53,7 +53,7 @@ export default function Hero(props) {
                   </span>
                 </h6>
               </div>
-              <div className="col-auto" style={{ marginRight: 35 }}>
+              <div className="col-auto res-icon" style={{ marginRight: 35 }}>
                 <img
                   src={IconCities}
                   alt={`${props.data.cities} cities`}
@@ -84,7 +84,7 @@ export default function Hero(props) {
             </div>
           </div>
 
-          <div className="col-6 pl-5 pt-3">
+          <div className="col-6 pl-5 pt-3 d-sm-none d-md-block d-none d-sm-block">
             <div style={{ width: 565, height: 404 }}>
               <img
                 src={ImageHero}

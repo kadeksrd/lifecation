@@ -38,7 +38,7 @@ function Header(props) {
                   </Button>
                 </li>
                 <li className={`nav-item ${getNavLinkClass("/browse-by")}`}>
-                  <Button className="nav-link" type="link" href="/browse-by">
+                  <Button className="nav-link" type="link" href="#mostpicked">
                     Browse By
                   </Button>
                 </li>

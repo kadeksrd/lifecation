@@ -154,7 +154,7 @@ class Checkout extends Component {
                     data.phone !== "" && (
                       <Fade>
                         <Button
-                          className="btn mb-3"
+                          className="btn mb-3 "
                           type="button"
                           isBlock
                           isPrimary

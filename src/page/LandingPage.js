@@ -8,7 +8,6 @@ import MostPicked from "parts/MostPicked";
 import Category from "parts/Category";
 import Testimony from "parts/Testimony";
 import Footer from "parts/Footer";
-
 import { fetchPage } from "store/action/page";
 
 class LandingPage extends Component {
@@ -18,7 +17,7 @@ class LandingPage extends Component {
   }
 
   componentDidMount() {
-    document.title = "Lifecation | Home";
+    document.title = `Lifecation | Home`;
     window.scrollTo(0, 0);
     if (!this.props.page.landingPage)
       this.props.fetchPage(`/landing-page`, "landingPage");

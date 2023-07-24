@@ -83,7 +83,7 @@ class BookingForm extends Component {
 
     return (
       <div
-        className="card bordered"
+        className="card bordered card-booking"
         style={{ padding: "49px 47px", marginLeft: 30 }}>
         <h4 className="mb-3">Start Booking</h4>
         <h5 className="h2 text-teal mb-4">
